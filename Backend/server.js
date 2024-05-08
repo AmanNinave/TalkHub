@@ -4,6 +4,8 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
+import userRoutes from "./routes/user.routes.js";
+
 import connectToDatabase from "./db/connectToDatabase.js";
 
 dotenv.config();
@@ -15,6 +17,7 @@ app.use(express.json());                    // to parse incomming requests with 
 app.use(cookieParser());
 app.use("/api/auth" , authRoutes );
 app.use("/api/message" , messageRoutes );
+app.use("/api/users" , userRoutes );
 
 app.get("/" , (req , res )=>{
     res.send("home page is here");
